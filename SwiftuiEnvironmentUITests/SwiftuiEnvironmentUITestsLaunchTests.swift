@@ -8,25 +8,23 @@
 import XCTest
 
 final class SwiftuiEnvironmentUITestsLaunchTests: XCTestCase {
-
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
-        true
-    }
-
+    
     override func setUpWithError() throws {
         continueAfterFailure = false
-    }
-
-    func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
-
-        let attachment = XCTAttachment(screenshot: app.screenshot())
-        attachment.name = "Launch Screen"
-        attachment.lifetime = .keepAlways
-        add(attachment)
+    }
+    
+    func testAppLaunchesToHomeView() throws {
+        let app = XCUIApplication()
+        
+        // Assuming "Hello, SwiftUI!" text appears on the home view
+        let helloSwiftUIText = app.staticTexts["Hello, SwiftUI!"]
+        XCTAssertTrue(helloSwiftUIText.exists, "The app did not launch to the expected home view.")
+        
+        // Optionally, verify other UI elements specific to the home view
+        // For example, checking for the "Go to Settings" button
+        let goToSettingsButton = app.buttons["Go to Settings"]
+        XCTAssertTrue(goToSettingsButton.exists, "The 'Go to Settings' button was not found on the home view.")
     }
 }

@@ -20,6 +20,7 @@ struct SettingsView: View {
         Toggle(isOn: $themeSettings.isDarkMode) {
             Text("Dark Mode")
         }
+        .accessibilityIdentifier("Dark Mode Toggle")
         .padding()
     }
 }
