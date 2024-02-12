@@ -8,29 +8,35 @@
 import XCTest
 @testable import SwiftuiEnvironment
 
-final class SwiftuiEnvironmentTests: XCTestCase {
+class ThemeSettingsTests: XCTestCase {
+
+    var themeSettings: ThemeSettings!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Set up your environment before each test
+        themeSettings = ThemeSettings()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Clean up your environment after each test
+        themeSettings = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testThemeSettings_Initialization_DefaultsToLightMode() throws {
+        // Test if the theme settings default to light mode
+        XCTAssertFalse(themeSettings.isDarkMode, "ThemeSettings should initialize with isDarkMode set to false")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testThemeSettings_Toggle_IsDarkModeTogglesCorrectly() throws {
+        // Initial state should be false (light mode)
+        XCTAssertFalse(themeSettings.isDarkMode, "Initially, isDarkMode should be false")
 
+        // Toggle to dark mode
+        themeSettings.isDarkMode.toggle()
+        XCTAssertTrue(themeSettings.isDarkMode, "After toggling, isDarkMode should be true")
+
+        // Toggle back to light mode
+        themeSettings.isDarkMode.toggle()
+        XCTAssertFalse(themeSettings.isDarkMode, "After a second toggle, isDarkMode should be false")
+    }
 }
