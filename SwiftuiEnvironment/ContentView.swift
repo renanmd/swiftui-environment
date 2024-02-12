@@ -7,20 +7,20 @@
 
 import SwiftUI
 
+// The main content view that adapts based on the theme
 struct ContentView: View {
+    @EnvironmentObject var themeSettings: ThemeSettings
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Text("Hello, SwiftUI!")
+                    .padding()
+                
+                NavigationLink("Go to Settings", destination: SettingsView())
+            }
+            .navigationBarTitle("Home", displayMode: .large)
         }
-        .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        .environment(\.colorScheme, themeSettings.isDarkMode ? .dark : .light)
     }
 }

@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+// The main App struct that sets up the environment
 @main
-struct SwiftuiEnvironmentApp: App {
+struct MyThemeApp: App {
+    @StateObject var themeSettings = ThemeSettings()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(themeSettings)
         }
     }
 }

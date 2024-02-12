@@ -14,6 +14,7 @@
 		3270AEED2B7A778400805236 /* SwiftuiEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270AEEC2B7A778400805236 /* SwiftuiEnvironmentTests.swift */; };
 		3270AEF72B7A778400805236 /* SwiftuiEnvironmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270AEF62B7A778400805236 /* SwiftuiEnvironmentUITests.swift */; };
 		3270AEF92B7A778400805236 /* SwiftuiEnvironmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270AEF82B7A778400805236 /* SwiftuiEnvironmentUITestsLaunchTests.swift */; };
+		3270AF062B7A793200805236 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270AF052B7A793200805236 /* ThemeSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3270AEF22B7A778400805236 /* SwiftuiEnvironmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftuiEnvironmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3270AEF62B7A778400805236 /* SwiftuiEnvironmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiEnvironmentUITests.swift; sourceTree = "<group>"; };
 		3270AEF82B7A778400805236 /* SwiftuiEnvironmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiEnvironmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3270AF052B7A793200805236 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				3270AEDB2B7A778000805236 /* SwiftuiEnvironmentApp.swift */,
 				3270AEDD2B7A778000805236 /* ContentView.swift */,
+				3270AF052B7A793200805236 /* ThemeSettings.swift */,
 				3270AEDF2B7A778400805236 /* Assets.xcassets */,
 				3270AEE12B7A778400805236 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3270AF062B7A793200805236 /* ThemeSettings.swift in Sources */,
 				3270AEDE2B7A778000805236 /* ContentView.swift in Sources */,
 				3270AEDC2B7A778000805236 /* SwiftuiEnvironmentApp.swift in Sources */,
 			);
